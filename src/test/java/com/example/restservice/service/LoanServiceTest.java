@@ -20,7 +20,6 @@ import static org.mockito.Mockito.when;
 
 import java.util.List;
 
-
 public class LoanServiceTest {
 
     ILoanService loanService;
@@ -74,6 +73,10 @@ public class LoanServiceTest {
         assertEquals(9.0, loanMetric.getMonthlyPayment());
     }
 
+    /**
+     * For this test I decide to use the full implementations of the Calculators classes
+     * Mocking this part seams meaningless
+     */
     @Test
     public void validateMaxPayment(){
 

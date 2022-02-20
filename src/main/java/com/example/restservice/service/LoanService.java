@@ -18,6 +18,9 @@ import com.example.restservice.util.LoanGeneratonUtil;
 public class LoanService implements ILoanService{
 
 	private ILoanMetricFactory loanMetricFactory;
+	/**
+	 * To simulate a persistence, I save the Loans list into the service object
+	 */
 	private List<Loan> loans;
 
 	@Autowired
@@ -26,10 +29,19 @@ public class LoanService implements ILoanService{
 		this.loans = LoanGeneratonUtil.getRandomLoans(30L);
 	}
 
+	/**
+	 * On this method I used a stream to get the Loan, based on the id
+	 * @param id
+	 * @return
+	 */
 	public Loan getLoan(Long id) {
 		return loans.stream().filter(loan -> loan.getLoanId().equals(id)).findAny().orElse(null);
 	}
 
+	/**
+	 * I added this method to the interface, to simplify the validations
+	 * @return
+	 */
 	public List<Loan> getLoans(){
 		return loans;
 	}
