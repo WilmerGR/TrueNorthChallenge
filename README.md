@@ -1,2 +1,2 @@
-# TrueNorthChallenge
-True North java challenge
+# java-challenge
+ Java8+ challenge. Spring, SpringBoot, Rest, Dependency Injection
